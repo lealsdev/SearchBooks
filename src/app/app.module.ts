@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ResultsComponent } from './results/results.component';
-import { BookComponent } from './book/book.component';
+import { BookComponent } from './results/book/book.component';
 
 @NgModule({
   declarations: [
