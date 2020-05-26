@@ -1,0 +1,12 @@
+.topMargin {
+    margin-top: 5%;
+}
+
+input, button {
+    margin-top: 5px;
+}
+
+input {
+    width: 100%;
+    font-size: 20px;
+}
