@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  searchString: String;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.searchString = this.activatedRoute.snapshot.queryParams['searchString']
+
+    console.log(this.searchString);
   }
 
 }

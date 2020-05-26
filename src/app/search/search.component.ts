@@ -16,8 +16,6 @@ export class SearchComponent implements OnInit {
   }
 
   navigateToResults(): void {
-    console.log(this.searchString);
-
     this.router.navigate(['/results'], {queryParams: {searchString: this.searchString}});
   }
 
