@@ -1,3 +1,5 @@
 export class Author {
-    name: String;
+    
+    constructor(private name: String){}
+    
 }
