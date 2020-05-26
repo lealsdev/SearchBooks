@@ -1,11 +1,13 @@
 footer {
     vertical-align: bottom; 
     position: fixed;
-    bottom: 20px; 
-    left: 10px;     
+    bottom: 0; 
+    left: 0;
+    background-color: white;
+    width: 100%;
 }
 
 .poweredInfo {
-    width: 50; 
+    width: 150px; 
     height:20px;
 }
