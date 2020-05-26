@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Book } from '../models/book';
-import { Author } from '../models/author';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -55,9 +54,7 @@ export class SearchBooksService {
       book.publishedDate = booksFromService[i]['volumeInfo'].publishedDate;
       book.thumbnail = booksFromService[i]['volumeInfo'].imageLinks?.thumbnail;
 
-      book.authors = booksFromService[i]['volumeInfo'].authors?.map<Author[]>((author: String) => {
-        return new Author(author);
-      });
+      book.authors = booksFromService[i]['volumeInfo'].authors?.join(',');
 
       books[i] = book;
     }      
