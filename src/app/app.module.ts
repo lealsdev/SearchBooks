@@ -9,8 +9,11 @@ import { BookComponent } from './results/book/book.component';
 import { FooterComponent } from './footer/footer.component';
 import { Routes, RouterModule } from '@angular/router';
 
+import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
-  { path: '', component: SearchComponent }
+  { path: '', component: SearchComponent },
+  { path: 'results', component: ResultsComponent }
 ];
 
 @NgModule({
@@ -24,6 +27,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
