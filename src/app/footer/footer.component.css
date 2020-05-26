@@ -1,0 +1,11 @@
+footer {
+    vertical-align: bottom; 
+    position: fixed;
+    bottom: 20px; 
+    left: 10px;     
+}
+
+.poweredInfo {
+    width: 50; 
+    height:20px;
+}
