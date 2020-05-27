@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 const routes: Routes = [
   { path: '', component: SearchComponent },
   { path: 'results', component: ResultsComponent }
@@ -30,7 +32,8 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

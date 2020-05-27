@@ -16,4 +16,10 @@
     </div>
 
     <app-book *ngFor="let book of books" [book]="book"></app-book>
+    <div 
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="1000"
+        (scrolled)="searchFreeBooks()">
+    </div>
 </div>

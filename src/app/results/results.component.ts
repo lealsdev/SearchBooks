@@ -19,16 +19,22 @@ export class ResultsComponent implements OnInit {
   ngOnInit(): void {
     this.searchString = this.activatedRoute.snapshot.queryParams['searchString'];
 
-    this.searchFreeBooks();
+    this.processNewSearch();
   }
 
+  /**
+   * Starts a new search for books using startIndex=0
+   */
   processNewSearch(): void {
     this.books = [];
     this.searchFreeBooks();
   }
 
+  /**
+   * Search for books using pagination based on the current list of books' length
+   */
   searchFreeBooks(): void {
-    this.searchBooksService.getFreeBooks(this.searchString).subscribe((data) => {
+    this.searchBooksService.getFreeBooks(this.searchString, this.books.length).subscribe((data) => {
       this.books.push(...data);
     });    
   }

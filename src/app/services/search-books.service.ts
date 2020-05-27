@@ -15,12 +15,16 @@ export class SearchBooksService {
   /**
    * Returns free books information based on the search criteria
    * @param searchString The string to be searched by the api
+   * @param startIndex The first item index to return (made for pagination)
    */
-  public getFreeBooks(searchString: String): Observable<Book[]> {
+  public getFreeBooks(searchString: String, startIndex: Number): Observable<Book[]> {
 
-    const url = `${environment.googleApi.getBooks}?q=${searchString}&filter=free-ebooks&projection=lite&maxResults=10`;
+    const url = `${environment.googleApi.getBooks}?q=${searchString}&filter=free-ebooks&projection=lite&maxResults=10&startIndex=${startIndex}`;
 
     return this.http.get<Book[]>(url).pipe<Book[]>(map((data) => {
+
+      if(!data['items'])
+        return new Array();
 
       const books: Book[] = this.convertGoogleServiceBooksToBooksModel(data['items']);
 
