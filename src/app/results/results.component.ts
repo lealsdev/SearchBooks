@@ -34,9 +34,24 @@ export class ResultsComponent implements OnInit {
    * Search for books using pagination based on the current list of books' length
    */
   searchFreeBooks(): void {
-    this.searchBooksService.getFreeBooks(this.searchString, this.books.length).subscribe((data) => {
-      this.books.push(...data);
-    });    
+    this.searchBooksService.getFreeBooks(this.searchString, this.books.length).subscribe(
+      (data) => {
+        this.books.push(...data);
+      }, 
+      (error) => {
+        alert('Bad, bad server. No donut for you! Do you recognize this phrase? Please, try again.');
+      });    
+  }
+
+  /**
+   * Does the search when the enter is pressed
+   * @param event KeyboardEvent
+   */
+  getEnterPressed(event: KeyboardEvent) {
+    if(event.key === 'Enter') {
+      event.preventDefault();
+      this.processNewSearch();
+    }
   }
 
 }

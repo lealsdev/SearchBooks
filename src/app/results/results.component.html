@@ -7,7 +7,7 @@
                 <a [routerLink]="['/']"><h5 class="chelseaMarket">Search Free eBooks</h5></a>
             </div>
             <div class="col-md-6 col-xs-8 text-center">
-                <input type="text" class="form-control" [(ngModel)]="searchString"/>
+                <input type="text" (keypress)="getEnterPressed($event)" class="form-control" [(ngModel)]="searchString"/>
             </div>
             <div class="col-md-1 col-xs-2 text-center">
                 <button class="btn btn-primary" (click)="processNewSearch()">Search</button>
